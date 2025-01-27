@@ -36,7 +36,7 @@ const EditJob = () => {
             try {
                 const res = await axios.get(`${JOB_API_END_POINT}/get/${id}`, { withCredentials: true });
 
-                console.log("Job Details Response:", res.data); // Debugging log
+                // console.log("Job Details Response:", res.data); // Debugging log
                 if (res.data.success) {
                     setInput(res.data.job);
                 } else { 

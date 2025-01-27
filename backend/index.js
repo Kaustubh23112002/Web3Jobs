@@ -8,10 +8,13 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 import { Job } from './models/job.model.js'; // Use named import
+import path from "path";
 
 dotenv.config({});
 
 const app = express();
+
+const _dirname = path.resolve();
 
 // middleware
 app.use(express.json());
@@ -20,11 +23,16 @@ app.use(cookieParser());
 const corsOptions = {
     origin: 'http://localhost:5173',
     credentials: true
-}
+};
 
 app.use(cors(corsOptions));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
+
+// Default route (add this here)
+// app.get('/', (req, res) => {
+//     res.send('Server is up and running!');
+// });
 
 // api's
 app.use("/api/v1/user", userRoute);
@@ -70,7 +78,13 @@ app.put('/api/v1/job/:id', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get('*', (_, res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
+
+// Server listening (ensure it binds to 0.0.0.0)
+app.listen(PORT, '0.0.0.0', () => {
     connectDB();
     console.log(`Server running at port ${PORT}`);
 });
