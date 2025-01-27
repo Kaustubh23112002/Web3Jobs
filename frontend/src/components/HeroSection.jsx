@@ -19,7 +19,7 @@ const HeroSection = () => {
             <div className='flex flex-col gap-5 my-10'>
                 
                 <h1 className='text-5xl font-bold'>Search, Apply & <br /> Get Your <span className="text-gradient">Dream Jobs</span></h1>
-                <p>Find Your Web3 Career with THRM Digital Marketing Agency</p> 
+                <p>Find Your Web3 Career with THRM WEB3 JOBS</p> 
                 <div className='flex w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto bg-[black]'>
   <input
     type="text"
