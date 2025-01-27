@@ -9,12 +9,13 @@ import axios from "axios";
 import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice";
 import { toast } from "sonner";
+import web3Logo from "../../assets/web3.png";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for the hamburger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const logoutHandler = async () => {
     try {
@@ -37,19 +38,15 @@ const Navbar = () => {
       {/* Navbar container */}
       <div className={`bg-black ${isMenuOpen ? "pb-20" : ""} transition-all`}>
         <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 sm:px-6 md:px-8">
+          {/* Logo */}
           <div>
-            <h1 className="text-2xl font-bold text-white">
-              THRM WEB-3 <span className="text-gradient">JOBS</span>
-            </h1>
-            <style jsx>{`
-              .text-gradient {
-                background: linear-gradient(90deg, #81c315 0, #ffd300);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
-              }
-            `}</style>
+            <Link to="/">
+              <img
+                src={web3Logo}
+                alt="THRM Web3 Jobs"
+                className="h-[80px] w-[120px] rounded-full p-2" // Apply styles here
+              />
+            </Link>
           </div>
 
           {/* Desktop Navbar Menu */}
@@ -130,7 +127,6 @@ const Navbar = () => {
                       </div>
                     </div>
                     <div className="flex flex-col my-2 text-gray-600">
-                      {/* Show View Profile for both Student and Recruiter */}
                       {user &&
                         (user.role === "student" ||
                           user.role === "recruiter") && (
@@ -224,13 +220,13 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="flex flex-col gap-2 mt-4">
-                <div className="flex w-fit items-center gap-2 cursor-pointer">
+                <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
                   <User2 />
                   <Button variant="link">
                     <Link to="/profile">View Profile</Link>
                   </Button>
                 </div>
-                <div className="flex w-fit items-center gap-2 cursor-pointer">
+                <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
                   <LogOut />
                   <Button onClick={logoutHandler} variant="link">
                     Logout
