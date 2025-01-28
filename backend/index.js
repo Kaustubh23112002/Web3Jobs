@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-    origin: 'https://web3jobs.onrender.com',
+    origin: 'https://thrmweb3jobs.org/',
     credentials: true
 };
 
