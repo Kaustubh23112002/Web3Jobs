@@ -240,65 +240,76 @@ const Signup = () => {
             />
           </div>
           <div className="my-2 text-white">
-            <RadioGroup className="flex items-center gap-4 radio-group-ios-fix">
-              <div className="flex items-center space-x-2 radio-item-ios-fix">
+            <RadioGroup className="flex items-center gap-4 ios:gap-6">
+              <div className="flex items-center ios:min-w-[130px]">
                 <Input
                   type="radio"
+                  id="r1" // Added ID for proper label association
                   name="role"
                   value="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
                   required
-                  className="cursor-pointer w-full"
+                  className="cursor-pointer w-[20px] h-[20px] mr-2" // Increased size
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.5)",
-                    backgroundColor: "transparent",
+                    backgroundColor:
+                      input.role === "student" ? "#fff" : "transparent",
                     color: "#fff",
                   }}
                 />
-                <Label htmlFor="r1" className="ios:whitespace-nowrap">
+                <Label htmlFor="r1" className="whitespace-nowrap ios:ml-1">
                   Candidate
                 </Label>
               </div>
-              <div className="flex items-center space-x-2 radio-item-ios-fix">
+              <div className="flex items-center ios:min-w-[130px]">
                 <Input
                   type="radio"
+                  id="r2" // Added ID for proper label association
                   name="role"
                   value="recruiter"
                   checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
                   required
-                  className="cursor-pointer w-full"
+                  className="cursor-pointer w-[20px] h-[20px] mr-2" // Increased size
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.5)",
-                    backgroundColor: "transparent",
+                    backgroundColor:
+                      input.role === "recruiter" ? "#fff" : "transparent",
                     color: "#fff",
                   }}
                 />
-                <Label htmlFor="r2" className="ios:whitespace-nowrap">
+                <Label htmlFor="r2" className="whitespace-nowrap ios:ml-1">
                   Recruiter
                 </Label>
               </div>
             </RadioGroup>
           </div>
 
-          {/* Add this CSS somewhere in your component */}
+          {/* Add this CSS */}
           <style>
             {`
             @supports (-webkit-touch-callout: none) {
-              .radio-group-ios-fix {
-                gap: 0.3rem !important;
-                padding: 0 8px !important;
+              input[type="radio"] {
+                -webkit-appearance: none;
+                appearance: none;
+                border-radius: 50%;
+                position: relative;
               }
-              .radio-item-ios-fix {
-                min-width: 110px !important;
-                flex-shrink: 0 !important;
-              }
-              .ios\:whitespace-nowrap {
-                white-space: nowrap !important;
+              
+              input[type="radio"]:checked::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #1d4236;
               }
             }
-            `}
+          `}
           </style>
           <div className="my-2 text-white">
             <Label>Profile Picture</Label>
