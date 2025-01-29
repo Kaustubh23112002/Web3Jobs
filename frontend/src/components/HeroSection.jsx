@@ -26,7 +26,7 @@ const HeroSection = () => {
                 </h1>
                 
                 <p className='text-gray-400 text-lg md:text-xl mb-8'>
-                    Launch Your Web3 Career Journey with THRM Digital Marketing Agency
+                    Launch Your Web3 Career Journey with THRM WEB3 JOBS
                 </p>
 
                 <div className='flex flex-col md:flex-row gap-4 w-full max-w-2xl mx-auto '>
