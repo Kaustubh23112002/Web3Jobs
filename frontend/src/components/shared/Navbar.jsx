@@ -126,11 +126,11 @@ const Navbar = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-col my-2 text-gray-600">
+                    <div className="flex flex-col my-2 text-white-600">
                       {user &&
                         (user.role === "student" ||
                           user.role === "recruiter") && (
-                          <div className="flex w-fit items-center gap-2 cursor-pointer">
+                          <div className="flex w-fit items-center gap-2 cursor-pointer ">
                             <User2 />
                             <Button variant="link">
                               <Link to="/profile">View Profile</Link>
@@ -138,7 +138,7 @@ const Navbar = () => {
                           </div>
                         )}
 
-                      <div className="flex w-fit items-center gap-2 cursor-pointer">
+                      <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
                         <LogOut />
                         <Button onClick={logoutHandler} variant="link">
                           Logout
