@@ -223,12 +223,12 @@ const Navbar = () => {
                 <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
                   <User2 />
                   <Button variant="link">
-                    <Link to="/profile">View Profile</Link>
+                    <Link to="/profile" className="text-white">View Profile</Link>
                   </Button>
                 </div>
                 <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
                   <LogOut />
-                  <Button onClick={logoutHandler} variant="link">
+                  <Button onClick={logoutHandler} variant="link" className="text-white">
                     Logout
                   </Button>
                 </div>
