@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import Navbar from '../shared/Navbar';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { RadioGroup } from '../ui/radio-group';
-import { Button } from '../ui/button';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { USER_API_END_POINT } from '@/utils/constant';
-import { toast } from 'sonner';
-import { useDispatch, useSelector } from 'react-redux';
-import { setLoading } from '@/redux/authSlice';
-import { Loader2 } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import Navbar from "../shared/Navbar";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { RadioGroup } from "../ui/radio-group";
+import { Button } from "../ui/button";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { USER_API_END_POINT } from "@/utils/constant";
+import { toast } from "sonner";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoading } from "@/redux/authSlice";
+import { Loader2 } from "lucide-react";
 
 // Floating binary animation styles
 const containerStyle = {
-  position: 'fixed',
+  position: "fixed",
   top: 0,
   left: 0,
-  width: '100%',
-  height: '100%',
-  backgroundColor: 'black',
-  overflow: 'hidden',
+  width: "100%",
+  height: "100%",
+  backgroundColor: "black",
+  overflow: "hidden",
   zIndex: -1,
 };
 
 const binaryColumnStyle = {
-  position: 'absolute',
-  top: '-100%',
-  color: 'green',
-  fontFamily: 'monospace',
-  fontSize: '14px',
-  animation: 'falling-binary 5s linear infinite',
+  position: "absolute",
+  top: "-100%",
+  color: "green",
+  fontFamily: "monospace",
+  fontSize: "14px",
+  animation: "falling-binary 5s linear infinite",
 };
 
 const keyframes = `
@@ -49,7 +49,7 @@ const keyframes = `
 }`;
 
 // Inject keyframes into the DOM
-const styleElement = document.createElement('style');
+const styleElement = document.createElement("style");
 styleElement.innerHTML = keyframes;
 document.head.appendChild(styleElement);
 
@@ -58,8 +58,8 @@ const generateBinaryColumns = () => {
   for (let i = 0; i < 20; i++) {
     const binaryStream = Array(30)
       .fill(0)
-      .map(() => (Math.random() > 0.5 ? '1' : '0'))
-      .join('');
+      .map(() => (Math.random() > 0.5 ? "1" : "0"))
+      .join("");
     const columnStyle = {
       ...binaryColumnStyle,
       left: `${i * 5}%`,
@@ -68,7 +68,7 @@ const generateBinaryColumns = () => {
     };
     columns.push(
       <div key={i} style={columnStyle}>
-        {binaryStream.split('').map((char, index) => (
+        {binaryStream.split("").map((char, index) => (
           <div key={index}>{char}</div>
         ))}
       </div>
@@ -79,12 +79,12 @@ const generateBinaryColumns = () => {
 
 const Signup = () => {
   const [input, setInput] = useState({
-    fullname: '',
-    email: '',
-    phoneNumber: '',
-    password: '',
-    role: '',
-    file: '',
+    fullname: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    role: "",
+    file: "",
   });
   const { loading, user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
@@ -98,27 +98,34 @@ const Signup = () => {
   };
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (!input.fullname || !input.email || !input.phoneNumber || !input.password || !input.role || !input.file) {
-      toast.error('All fields are required.');
+    if (
+      !input.fullname ||
+      !input.email ||
+      !input.phoneNumber ||
+      !input.password ||
+      !input.role ||
+      !input.file
+    ) {
+      toast.error("All fields are required.");
       return;
     }
 
     const formData = new FormData();
-    formData.append('fullname', input.fullname);
-    formData.append('email', input.email);
-    formData.append('phoneNumber', input.phoneNumber);
-    formData.append('password', input.password);
-    formData.append('role', input.role);
-    formData.append('file', input.file);
+    formData.append("fullname", input.fullname);
+    formData.append("email", input.email);
+    formData.append("phoneNumber", input.phoneNumber);
+    formData.append("password", input.password);
+    formData.append("role", input.role);
+    formData.append("file", input.file);
 
     try {
       dispatch(setLoading(true));
       const res = await axios.post(`${USER_API_END_POINT}/register`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
       if (res.data.success) {
-        navigate('/login');
+        navigate("/login");
         toast.success(res.data.message);
       }
     } catch (error) {
@@ -131,7 +138,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      navigate("/");
     }
   }, [user, navigate]);
 
@@ -144,23 +151,23 @@ const Signup = () => {
       <div
         className="flex items-center justify-center px-4 sm:px-6 md:px-8 max-w-5xl mx-auto h-[570px] relative login-container"
         style={{
-          margin: '0 auto',
+          margin: "0 auto",
         }}
       >
         <form
           onSubmit={submitHandler}
           className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 border border-gray-200 rounded-md p-4 md:p-1 lg:p-2 my-10"
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(7px)',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            borderRadius: '8px',
-            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2)',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            maxWidth: '90%',
-            paddingLeft: '20px',
-            paddingRight: '20px',
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(7px)",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            borderRadius: "8px",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: "90%",
+            paddingLeft: "20px",
+            paddingRight: "20px",
           }}
         >
           <h1 className="font-bold text-xl text-white mb-2">Sign Up</h1>
@@ -174,9 +181,9 @@ const Signup = () => {
               placeholder="Enter your full name"
               required
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                backgroundColor: 'transparent',
-                color: '#fff',
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+                backgroundColor: "transparent",
+                color: "#fff",
               }}
               className="w-full"
             />
@@ -191,9 +198,9 @@ const Signup = () => {
               placeholder="example@gmail.com"
               required
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                backgroundColor: 'transparent',
-                color: '#fff',
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+                backgroundColor: "transparent",
+                color: "#fff",
               }}
               className="w-full"
             />
@@ -208,9 +215,9 @@ const Signup = () => {
               placeholder="123456890"
               required
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                backgroundColor: 'transparent',
-                color: '#fff',
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+                backgroundColor: "transparent",
+                color: "#fff",
               }}
               className="w-full"
             />
@@ -225,51 +232,74 @@ const Signup = () => {
               placeholder="****"
               required
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                backgroundColor: 'transparent',
-                color: '#fff',
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+                backgroundColor: "transparent",
+                color: "#fff",
               }}
               className="w-full"
             />
           </div>
           <div className="my-2 text-white">
-            <RadioGroup className="flex items-center gap-4">
-              <div className="flex items-center space-x-2">
+            <RadioGroup className="flex items-center gap-4 radio-group-ios-fix">
+              <div className="flex items-center space-x-2 radio-item-ios-fix">
                 <Input
                   type="radio"
                   name="role"
                   value="student"
-                  checked={input.role === 'student'}
+                  checked={input.role === "student"}
                   onChange={changeEventHandler}
                   required
                   className="cursor-pointer w-full"
                   style={{
-                    border: '1px solid rgba(255, 255, 255, 0.5)',
-                    backgroundColor: 'transparent',
-                    color: '#fff',
+                    border: "1px solid rgba(255, 255, 255, 0.5)",
+                    backgroundColor: "transparent",
+                    color: "#fff",
                   }}
                 />
-                <Label htmlFor="r1">Candidate</Label>
+                <Label htmlFor="r1" className="ios:whitespace-nowrap">
+                  Student
+                </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 radio-item-ios-fix">
                 <Input
                   type="radio"
                   name="role"
                   value="recruiter"
-                  checked={input.role === 'recruiter'}
+                  checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
                   required
                   className="cursor-pointer w-full"
                   style={{
-                    border: '1px solid rgba(255, 255, 255, 0.5)',
-                    backgroundColor: 'transparent',
-                    color: '#fff',
+                    border: "1px solid rgba(255, 255, 255, 0.5)",
+                    backgroundColor: "transparent",
+                    color: "#fff",
                   }}
                 />
-                <Label htmlFor="r2">Recruiter</Label>
+                <Label htmlFor="r2" className="ios:whitespace-nowrap">
+                  Recruiter
+                </Label>
               </div>
             </RadioGroup>
           </div>
+
+          {/* Add this CSS somewhere in your component */}
+          <style>
+            {`
+            @supports (-webkit-touch-callout: none) {
+              .radio-group-ios-fix {
+                gap: 1rem !important;
+                padding: 0 8px !important;
+              }
+              .radio-item-ios-fix {
+                min-width: 110px !important;
+                flex-shrink: 0 !important;
+              }
+              .ios\:whitespace-nowrap {
+                white-space: nowrap !important;
+              }
+            }
+            `}
+          </style>
           <div className="my-2 text-white">
             <Label>Profile Picture</Label>
             <Input
@@ -279,8 +309,8 @@ const Signup = () => {
               required
               className="cursor-pointer w-full"
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                color: '#000',
+                border: "1px solid rgba(255, 255, 255, 0.5)",
+                color: "#000",
               }}
             />
           </div>
@@ -289,12 +319,16 @@ const Signup = () => {
               <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
             </Button>
           ) : (
-            <Button type="submit" className="w-full my-4" style={{ background: '#1d4236' }}>
+            <Button
+              type="submit"
+              className="w-full my-4"
+              style={{ background: "#1d4236" }}
+            >
               Sign Up
             </Button>
           )}
           <span className="text-sm text-white">
-            Already have an account?{' '}
+            Already have an account?{" "}
             <Link to="/login" className="text-blue-600">
               Login
             </Link>

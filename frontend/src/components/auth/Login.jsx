@@ -184,36 +184,55 @@ const Login = () => {
               className="w-full"
             />
           </div>
-          <div className="flex items-center justify-between flex-col sm:flex-row">
-            <RadioGroup className="flex items-center gap-4 my-5 sm:my-3">
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="student"
-                  checked={input.role === 'student'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r1" style={{ color: '#fff' }}>
-                  Candidate
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  name="role"
-                  value="recruiter"
-                  checked={input.role === 'recruiter'}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="r2" style={{ color: '#fff' }}>
-                  Recruiter
-                </Label>
-              </div>
-            </RadioGroup>
-          </div>
+              {/* Add this style tag near your other style definitions */}
+<style>
+  {`
+    /* iOS Safari-specific fixes */
+    @supports (-webkit-touch-callout: none) {
+      .radio-group-ios-fix {
+        gap: 1rem !important;
+        margin: 0 8px !important;
+      }
+      .radio-item-ios-fix {
+        min-width: 120px !important;
+      }
+    }
+  `}
+</style>
+
+{/* Modified RadioGroup section */}
+<div className="flex items-center justify-between flex-col sm:flex-row">
+  <RadioGroup 
+    className="flex items-center gap-4 my-5 sm:my-3 radio-group-ios-fix"
+  >
+    <div className="flex items-center space-x-2 radio-item-ios-fix">
+      <Input
+        type="radio"
+        name="role"
+        value="student"
+        checked={input.role === 'student'}
+        onChange={changeEventHandler}
+        className="cursor-pointer"
+      />
+      <Label htmlFor="r1" className="text-white whitespace-nowrap">
+        Candidate
+      </Label>
+    </div>
+    <div className="flex items-center space-x-2 radio-item-ios-fix">
+      <Input
+        type="radio"
+        name="role"
+        value="recruiter"
+        checked={input.role === 'recruiter'}
+        onChange={changeEventHandler}
+        className="cursor-pointer"
+      />
+      <Label htmlFor="r2" className="text-white whitespace-nowrap">
+        Recruiter
+      </Label>
+    </div>
+  </RadioGroup>
+</div>
           {loading ? (
             <Button className="w-full my-4">
               <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
