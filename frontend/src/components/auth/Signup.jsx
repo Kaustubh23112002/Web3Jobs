@@ -257,7 +257,7 @@ const Signup = () => {
                   }}
                 />
                 <Label htmlFor="r1" className="ios:whitespace-nowrap">
-                  Student
+                  Candidate
                 </Label>
               </div>
               <div className="flex items-center space-x-2 radio-item-ios-fix">
