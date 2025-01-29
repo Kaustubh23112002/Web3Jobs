@@ -190,7 +190,7 @@ const Login = () => {
     /* iOS Safari-specific fixes */
     @supports (-webkit-touch-callout: none) {
       .radio-group-ios-fix {
-        gap: 1rem !important;
+        gap: 0.3rem !important;
         margin: 0 8px !important;
       }
       .radio-item-ios-fix {

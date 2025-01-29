@@ -287,7 +287,7 @@ const Signup = () => {
             {`
             @supports (-webkit-touch-callout: none) {
               .radio-group-ios-fix {
-                gap: 1rem !important;
+                gap: 0.3rem !important;
                 padding: 0 8px !important;
               }
               .radio-item-ios-fix {
