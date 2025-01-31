@@ -26,6 +26,7 @@ import Avalanche from '../assets/Avalanche.png';
 import rubble from '../assets/rubble.png';
 import Chainlink from '../assets/Chainlink.png';
 import CryptoTicker from './CryptoTicker';
+import AboutUs from './AboutUs';
 
 
 const Home = () => {
@@ -103,6 +104,7 @@ const Home = () => {
         <HeroSection />
         <CategoryCarousel />
         <LatestJobs />
+        <AboutUs/>
         <Footer />
         <CryptoTicker/>
 
