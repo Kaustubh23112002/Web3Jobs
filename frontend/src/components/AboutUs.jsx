@@ -96,7 +96,13 @@ const AboutUs = () => {
           About Us
         </h2>
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8">
-          <div className="space-y-4 md:space-y-5 lg:space-y-6 md:w-[60%]">
+          {/* Animation Container - Moved Above Text in Mobile View */}
+          <div className="order-1 md:order-2 md:w-[40%] h-64 sm:h-72 md:h-[400px] rounded-xl lg:rounded-2xl overflow-hidden border border-white/20 relative">
+            <SpaceAnimation />
+          </div>
+
+          {/* Text Content - Moved Below Animation in Mobile View */}
+          <div className="order-2 md:order-1 md:w-[60%] space-y-4 md:space-y-5 lg:space-y-6">
             <p className="text-sm sm:text-base md:text-lg text-white mobile-justified">
               At <strong>THRM Web3 Jobs</strong>, we are your trusted partner in navigating the exciting world of <strong>Web3 careers</strong>. Our mission is to connect talented individuals with groundbreaking opportunities in blockchain, cryptocurrency, NFTs, and decentralized technologies. Whether you're a developer, marketer, or business professional, we’re here to help you find your dream job in the Web3 space.
             </p>
@@ -106,10 +112,6 @@ const AboutUs = () => {
             <p className="text-sm sm:text-base md:text-lg text-white mobile-justified">
               We specialize in connecting job seekers with roles in <strong>blockchain development, smart contract engineering, decentralized finance (DeFi), NFT marketplaces, and Web3 marketing</strong>. Our platform is designed to help you take the next step in your career, whether you're just starting out or looking to advance in the Web3 world.
             </p>
-          </div>
-
-          <div className="md:w-[40%] h-64 sm:h-72 md:h-[400px] rounded-xl lg:rounded-2xl overflow-hidden border border-white/20 relative">
-            <SpaceAnimation />
           </div>
         </div>
       </div>
