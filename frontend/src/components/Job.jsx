@@ -56,7 +56,7 @@ const Job = ({ job }) => {
                     <h1 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#f0fdf4' }}>
                         {job?.company?.name}
                     </h1>
-                    <p style={{ fontSize: '0.875rem', color: '#d1d5db' }}>India</p>
+                    <p style={{ fontSize: '0.875rem', color: '#d1d5db' }}>{job?.location}</p>
                 </div>
             </div>
 
