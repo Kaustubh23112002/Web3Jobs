@@ -77,7 +77,7 @@ const SpaceAnimation = () => {
         ref={logoRef}
         src={Web3Logo}
         alt="THRM Logo"
-        className="absolute left-1/2 top-1/2 w-24 h-24 md:w-40 md:h-40 transition-all duration-300"
+        className="absolute left-1/2 top-1/2 w-90 h-90 md:w-90 md:h-90 transition-all duration-300"
         style={{
           transform: 'translate(-50%, -50%)',
           transformOrigin: 'center center',
