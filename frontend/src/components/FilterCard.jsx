@@ -24,7 +24,10 @@ const fitlerData = [
             "Lucknow",
             "Bhopal",
             "Thane",
-            "Mysuru"],
+            "Mysuru",
+            "USA",
+            "Taiwan",
+            "Bucharest"],
     },
     {
         fitlerType: 'Industry',
