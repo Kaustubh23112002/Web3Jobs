@@ -30,6 +30,11 @@ const SpaceAnimation = () => {
       });
     }
 
+     // Variables for slow zoom-in animation of the logo
+     let scale = 0.2;
+     const zoomSpeed = 0.0015; // Adjust this value for a faster or slower zoom-in
+     const maxScale = 1.1; // Maximum scale value for the logo
+
     // Animation loop
     const animate = () => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.75)';
@@ -47,17 +52,13 @@ const SpaceAnimation = () => {
         ctx.fill();
       });
 
-      // Logo animation
-      const time = Date.now();
+      // Updated Logo animation: Slow zoom-in
       if (logoRef.current) {
-        logoRef.current.style.transform = `
-          translate(-50%, -50%)
-          scale(${1 + Math.sin(time/500) * 0.05})
-          rotate(${Math.sin(time/700) * 3}deg)
-        `;
-        logoRef.current.style.opacity = `${0.8 + Math.sin(time/300) * 0.2}`;
+        scale = Math.min(scale + zoomSpeed, maxScale);
+        logoRef.current.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        // Optionally, you can fix opacity or remove this line if not needed.
+        logoRef.current.style.opacity = '1';
       }
-
       requestAnimationFrame(animate);
     };
 
