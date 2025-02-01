@@ -44,7 +44,7 @@ const Navbar = () => {
               <img
                 src={web3Logo}
                 alt="THRM Web3 Jobs"
-                className="h-[80px] w-[120px] rounded-full p-2" // Apply styles here
+                className="h-[80px] w-[120px] rounded-full p-2"
               />
             </Link>
           </div>
@@ -55,22 +55,25 @@ const Navbar = () => {
               {user && user.role === "recruiter" ? (
                 <>
                   <li>
-                    <Link to="/admin/companies">Companies</Link>
+                    <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
                   </li>
                   <li>
-                    <Link to="/admin/jobs">Jobs</Link>
+                    <Link to="/admin/companies" onClick={() => setIsMenuOpen(false)}>Companies</Link>
+                  </li>
+                  <li>
+                    <Link to="/admin/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
                   </li>
                 </>
               ) : (
                 <>
                   <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
                   </li>
                   <li>
-                    <Link to="/jobs">Jobs</Link>
+                    <Link to="/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
                   </li>
                   <li>
-                    <Link to="/browse">Browse</Link>
+                    <Link to="/browse" onClick={() => setIsMenuOpen(false)}>Browse</Link>
                   </li>
                 </>
               )}
@@ -126,11 +129,11 @@ const Navbar = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-col my-2 text-white-600">
+                    <div className="flex flex-col my-2 text-gray-600">
                       {user &&
                         (user.role === "student" ||
                           user.role === "recruiter") && (
-                          <div className="flex w-fit items-center gap-2 cursor-pointer ">
+                          <div className="flex w-fit items-center gap-2 cursor-pointer">
                             <User2 />
                             <Button variant="link">
                               <Link to="/profile">View Profile</Link>
@@ -138,7 +141,7 @@ const Navbar = () => {
                           </div>
                         )}
 
-                      <div className="flex w-fit items-center gap-2 cursor-pointer text-white">
+                      <div className="flex w-fit items-center gap-2 cursor-pointer">
                         <LogOut />
                         <Button onClick={logoutHandler} variant="link">
                           Logout
@@ -172,22 +175,25 @@ const Navbar = () => {
             {user && user.role === "recruiter" ? (
               <>
                 <li>
-                  <Link to="/admin/companies">Companies</Link>
+                  <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/admin/jobs">Jobs</Link>
+                  <Link to="/admin/companies" onClick={() => setIsMenuOpen(false)}>Companies</Link>
+                </li>
+                <li>
+                  <Link to="/admin/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
                 </li>
               </>
             ) : (
               <>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/jobs">Jobs</Link>
+                  <Link to="/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
                 </li>
                 <li>
-                  <Link to="/browse">Browse</Link>
+                  <Link to="/browse" onClick={() => setIsMenuOpen(false)}>Browse</Link>
                 </li>
               </>
             )}
