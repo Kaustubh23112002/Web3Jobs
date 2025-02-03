@@ -181,6 +181,8 @@ const FilterCard = () => {
             "50k-1LPA",
             "1LPA-3LPA",
             "3LPA-5LPA",
+            "5LPA-10LPA",
+            "10LPA-30LPA"
           ],
         },
       ].map((data, index) => (

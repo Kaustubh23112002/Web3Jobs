@@ -98,7 +98,15 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
   return (
     <div>
       <Dialog open={open}>
-        <DialogContent className="sm:max-w-[425px]" onInteractOutside={() => setOpen(false)}>
+      <DialogContent
+          aria-describedby="dialog-description"
+          className="sm:max-w-[425px]"
+          onInteractOutside={() => setOpen(false)}
+          style={{
+            maxHeight: '90vh',
+            overflowY: 'auto',
+          }}
+        >
           <DialogHeader>
             <DialogTitle>Update Profile</DialogTitle>
           </DialogHeader>
