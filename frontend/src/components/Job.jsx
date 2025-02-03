@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './ui/button';
-// import { Bookmark } from 'lucide-react';
 import { Avatar, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +26,10 @@ const Job = ({ job }) => {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
                 border: '1px solid #374151',
                 transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                display: 'flex', // Flexbox layout for the container
+                flexDirection: 'column', // Stack children vertically
+                height: '100%', // Ensure the card takes up available height
+                minHeight: '350px', // Minimum height for the card to ensure consistency
             }}
             onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.05)';
@@ -44,7 +47,6 @@ const Job = ({ job }) => {
                         ? 'Today'
                         : `${daysAgoFunction(job?.createdAt)} days ago`}
                 </p>
-                
             </div>
 
             {/* Company Information */}
@@ -61,7 +63,7 @@ const Job = ({ job }) => {
             </div>
 
             {/* Job Title and Description */}
-            <div style={{ marginBottom: '1rem' }}>
+            <div style={{ marginBottom: '1rem', flexGrow: 1 }}>
                 <h1
                     style={{
                         fontSize: '1.5rem',
@@ -150,7 +152,6 @@ const Job = ({ job }) => {
                 >
                     Details
                 </Button>
-                
             </div>
         </div>
     );

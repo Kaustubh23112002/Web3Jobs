@@ -11,12 +11,16 @@ const LatestJobCards = ({ job }) => {
             style={{
                 padding: '1.5rem',
                 borderRadius: '1rem',
-                background: 'linear-gradient(to bottom left, #1f3635 0%, #07c08f 100%)',  // Gradient color
+                background: 'linear-gradient(to bottom left, #1f3635 0%, #07c08f 100%)', // Gradient color
                 color: 'white',
                 cursor: 'pointer',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
                 border: '1px solid #374151',
                 transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+                display: 'flex', // Flexbox for layout
+                flexDirection: 'column', // Stack children vertically
+                height: '100%', // Ensure cards expand to fill the height of their parent container
+                minHeight: '250px', // Set a minimum height for the card to maintain consistency
             }}
             onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.05)';
@@ -43,7 +47,7 @@ const LatestJobCards = ({ job }) => {
             </div>
 
             {/* Job Title and Description */}
-            <div style={{ marginBottom: '1rem' }}>
+            <div style={{ marginBottom: '1rem', flexGrow: 1 }}>
                 <h1
                     style={{
                         fontSize: '1.5rem',
@@ -80,9 +84,9 @@ const LatestJobCards = ({ job }) => {
                 {/* Number of positions badge */}
                 <Badge
                     style={{
-                        color: '#fff',  // Change color of text
+                        color: '#fff', // Change color of text
                         fontWeight: '600',
-                        background: '#00b0b9',  // New background color
+                        background: '#00b0b9', // New background color
                         padding: '0.25rem 0.75rem',
                         borderRadius: '9999px',
                         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
@@ -110,9 +114,9 @@ const LatestJobCards = ({ job }) => {
                 {/* Salary badge */}
                 <Badge
                     style={{
-                        color: '#fff',  // Change color of text
+                        color: '#fff', // Change color of text
                         fontWeight: '600',
-                        background: '#c9cc09',  // New background color for salary
+                        background: '#c9cc09', // New background color for salary
                         padding: '0.25rem 0.75rem',
                         borderRadius: '9999px',
                         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
