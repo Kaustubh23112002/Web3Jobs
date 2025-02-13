@@ -44,7 +44,7 @@ const Navbar = () => {
               <img
                 src={web3Logo}
                 alt="THRM Web3 Jobs"
-                className="h-[95px] w-[130px] rounded-full p-2"
+                className="h-[100px] w-[130px] rounded-full p-2"
               />
             </Link>
           </div>
