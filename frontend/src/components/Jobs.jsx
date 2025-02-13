@@ -4,7 +4,8 @@ import FilterCard from './FilterCard';
 import Job from './Job';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
-import Space from '../assets/space.jpg';
+// import Space from '../assets/space.jpg';
+import jobsbg from '../assets/jobs-bg.mp4'
 
 const Jobs = () => {
     const { allJobs, searchedQuery } = useSelector((store) => store.job);
@@ -91,31 +92,24 @@ const Jobs = () => {
 
     return (
         <div style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
-            {/* Space background */}
-            <style>
-                {`
-                @keyframes spaceMove {
-                    0% {
-                        background-position: 0 0;
-                    }
-                    100% {
-                        background-position: 5000px 5000px;
-                    }
-                }
-            `}</style>
-            <div
+                                {/* Background Video */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    background: `url(${Space}) repeat`,
-                    backgroundSize: 'cover',
-                    animation: 'spaceMove 60s linear infinite',
-                    zIndex: -1,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                zIndex: -1,
                 }}
-            ></div>
+            >
+                <source src={jobsbg} type="video/mp4" />
+            </video>
 
             <Navbar />
             <div className="max-w-7xl mx-auto mt-5 relative z-10">

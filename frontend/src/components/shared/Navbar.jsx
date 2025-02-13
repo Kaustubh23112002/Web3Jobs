@@ -9,7 +9,7 @@ import axios from "axios";
 import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice";
 import { toast } from "sonner";
-import web3Logo from "../../assets/web3.png";
+import web3Logo from "../../assets/thrm-logo.png";
 
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
