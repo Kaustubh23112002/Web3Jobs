@@ -171,6 +171,7 @@ const FilterCard = () => {
             "Principal Engineer",
             "Business Development Manager",
             "Marketing Coordinator",
+            "Test Automation Engineer",
           ],
         },
         {

@@ -7,7 +7,7 @@ import { setSearchedQuery } from '@/redux/jobSlice';
 
 const category = [
     "Blockchain Developer",
-    "Smart-Contract Developer",
+    // "Smart-Contract Developer",
     "Solidity Developer",
     "Web3 Developer",
     "Blockchain Architect",
@@ -22,7 +22,7 @@ const category = [
     "NFT Developer",
     "Metaverse Developer",
     "DeFi Developer",
-    "Crypto Compliance Officer",
+    "Crypto Officer",
     "Crypto Auditor",
     "Web Developer",
     "Frontend Developer",
@@ -40,11 +40,12 @@ const category = [
     "Software Engineer",
     "Game Developer",
     "Technical Writer",
-    "Quality Assurance Engineer",
+    "QA Engineer",
     "Product Manager",
     "DevOps Manager",
     "Blockchain Consultant",
     "Blockchain Developer",
+    "Test Automation Engineer",
 ];
 
 const CategoryCarousel = () => {
