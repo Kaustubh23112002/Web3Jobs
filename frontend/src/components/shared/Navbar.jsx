@@ -37,14 +37,14 @@ const Navbar = () => {
     <div>
       {/* Navbar container */}
       <div className={`bg-black ${isMenuOpen ? "pb-20" : ""} transition-all`}>
-        <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 sm:px-6 md:px-8">
+        <div className="flex items-center justify-between mx-auto max-w-7xl h-20 px-4 sm:px-6 md:px-8">
           {/* Logo */}
           <div>
             <Link to="/">
               <img
                 src={web3Logo}
                 alt="THRM Web3 Jobs"
-                className="h-[80px] w-[120px] rounded-full p-2"
+                className="h-[95px] w-[130px] rounded-full p-2"
               />
             </Link>
           </div>

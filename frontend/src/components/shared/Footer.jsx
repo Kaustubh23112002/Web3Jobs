@@ -11,18 +11,9 @@ const Footer = () => {
           </div>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a
-              href="https://www.facebook.com/profile.php?id=61554950021351"
-              className="hover:text-gray-400"
-              aria-label="Facebook"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.676 0H1.324C.593 0 0 .592 0 1.324v21.352C0 23.408.593 24 1.324 24H12.82V14.706H9.692v-3.578h3.128V8.408c0-3.1 1.893-4.787 4.657-4.787 1.325 0 2.463.1 2.794.144v3.238l-1.918.001c-1.503 0-1.794.715-1.794 1.762v2.31h3.587l-.468 3.578h-3.119V24h6.116C23.407 24 24 23.408 24 22.676V1.324C24 .592 23.407 0 22.676 0z" />
-              </svg>
-            </a>
 
             <a
-              href="https://www.instagram.com/thrm.digitalmarketing_agency/"
+              href="https://www.instagram.com/thrmweb3jobs/"
               className="hover:text-gray-400"
               aria-label="Instagram"
             >
@@ -53,15 +44,15 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://x.com/i/flow/login?redirect_after_login=%2FTHRMsocial"
+              href="https://x.com/thrmweb3jobs"
               className="hover:text-gray-400"
               aria-label="Twitter"
             >
               <svg fill="#e0e0e0" version="1.1" className="w-6 h-6" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M215.2,361.2c0.1,2.2,0.1,4.5,0.1,6.8c0,69.5-52.9,149.7-149.7,149.7c-29.7,0-57.4-8.7-80.6-23.6c4.1,0.5,8.3,0.7,12.6,0.7 c24.6,0,47.3-8.4,65.3-22.5c-23-0.4-42.5-15.6-49.1-36.5c3.2,0.6,6.5,0.9,9.9,0.9c4.8,0,9.5-0.6,13.9-1.9 C13.5,430-4.6,408.7-4.6,383.2v-0.6c7.1,3.9,15.2,6.3,23.8,6.6c-14.1-9.4-23.4-25.6-23.4-43.8c0-9.6,2.6-18.7,7.1-26.5 c26,31.9,64.7,52.8,108.4,55c-0.9-3.8-1.4-7.8-1.4-12c0-29,23.6-52.6,52.6-52.6c15.1,0,28.8,6.4,38.4,16.6 c12-2.4,23.2-6.7,33.4-12.8c-3.9,12.3-12.3,22.6-23.1,29.1c10.6-1.3,20.8-4.1,30.2-8.3C234.4,344.5,225.5,353.7,215.2,361.2z"></path> </g></svg>
             </a>
             <a
-              href="https://www.linkedin.com/company/thrmsocialmediaagency/posts/?feedView=all"
-              className="hover:text-gray-400"
+              href="https://www.linkedin.com/company/thrmweb3jobs"
+              
               aria-label="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
