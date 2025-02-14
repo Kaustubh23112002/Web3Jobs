@@ -36,7 +36,7 @@ app.use(
             directives: {
                 defaultSrc: ["'self'"],
                 scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-                imgSrc: ["'self'", "data:", "https://res.cloudinary.com/"],
+                imgSrc: ["'self'", "data:", "https://res.cloudinary.com/", "https://coin-images.coingecko.com"],
                 styleSrc: ["'self'", "'unsafe-inline'"],
                 connectSrc: ["'self'", "https://res.cloudinary.com/", "https://nominatim.openstreetmap.org","https://api.coingecko.com"],
                 frameAncestors: ["'self'"],
