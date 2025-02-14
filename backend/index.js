@@ -41,7 +41,7 @@ app.use(
                 connectSrc: ["'self'", "https://res.cloudinary.com/", "https://nominatim.openstreetmap.org","https://api.coingecko.com"],
                 frameAncestors: ["'self'"],
                 objectSrc: ["'none'"],
-                upgradeInsecureRequests: true,
+                upgradeInsecureRequests: [],
             },
         },
     })
