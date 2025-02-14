@@ -38,7 +38,7 @@ app.use(
                 scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
                 imgSrc: ["'self'", "data:", "https://res.cloudinary.com/"],
                 styleSrc: ["'self'", "'unsafe-inline'"],
-                connectSrc: ["'self'", "https://res.cloudinary.com/", "https://nominatim.openstreetmap.org"],
+                connectSrc: ["'self'", "https://res.cloudinary.com/", "https://nominatim.openstreetmap.org","https://api.coingecko.com"],
                 frameAncestors: ["'self'"],
                 objectSrc: ["'none'"],
                 upgradeInsecureRequests: true,
@@ -60,7 +60,7 @@ app.use((req, res, next) => {
     const userAgent = req.headers["user-agent"];
     if (userAgent && botUserAgents.some(bot => userAgent.toLowerCase().includes(bot))) {
         const botUrl = `${RENDERTRON_URL}${req.protocol}://${req.get("host")}${req.originalUrl}`;
-        console.log(`Serving Rendertron for: ${req.originalUrl}`);
+        // console.log(`Serving Rendertron for: ${req.originalUrl}`);
 
         request(botUrl, (error, response, body) => {
             if (!error && response.statusCode === 200) {
