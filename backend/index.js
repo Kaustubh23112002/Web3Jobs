@@ -30,7 +30,22 @@ app.use(cors(corsOptions));
 
 // ⚡ Performance Optimizations
 app.use(compression()); // Compress responses (Brotli/Gzip)
-app.use(helmet()); // Secure headers
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                defaultSrc: ["'self'"],
+                scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+                imgSrc: ["'self'", "data:", "https://res.cloudinary.com/"],
+                styleSrc: ["'self'", "'unsafe-inline'"],
+                connectSrc: ["'self'", "https://res.cloudinary.com/"],
+                frameAncestors: ["'self'"],
+                objectSrc: ["'none'"],
+                upgradeInsecureRequests: [],
+            },
+        },
+    })
+); // Secure headers
 app.use(express.json({ limit: "1mb" })); // Prevent large payloads
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 app.use(cookieParser());
