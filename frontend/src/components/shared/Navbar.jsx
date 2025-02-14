@@ -37,7 +37,7 @@ const Navbar = () => {
     <div>
       {/* Navbar container */}
       <div className={`bg-black ${isMenuOpen ? "pb-20" : ""} transition-all`}>
-        <div className="flex items-center justify-between mx-auto max-w-7xl h-20 px-4 sm:px-6 md:px-8">
+        <div className="flex items-center justify-between mx-auto max-w-7xl h-22 px-4 sm:px-6 md:px-8">
           {/* Logo */}
           <div>
             <Link to="/">
