@@ -38,10 +38,10 @@ app.use(
                 scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
                 imgSrc: ["'self'", "data:", "https://res.cloudinary.com/"],
                 styleSrc: ["'self'", "'unsafe-inline'"],
-                connectSrc: ["'self'", "https://res.cloudinary.com/"],
+                connectSrc: ["'self'", "https://res.cloudinary.com/", "https://nominatim.openstreetmap.org"],
                 frameAncestors: ["'self'"],
                 objectSrc: ["'none'"],
-                upgradeInsecureRequests: [],
+                upgradeInsecureRequests: true,
             },
         },
     })
