@@ -43,6 +43,10 @@ const appRouter = createBrowserRouter([
     element: <Browse />
   },
   {
+    path: "/news",
+    element: <NewsPage />
+  },
+  {
     path: "/profile",
     element: <Profile />
   },

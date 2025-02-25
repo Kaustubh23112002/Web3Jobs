@@ -63,6 +63,9 @@ const Navbar = () => {
                   <li>
                     <Link to="/admin/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
                   </li>
+                  <li>
+                    <Link to="/news" onClick={() => setIsMenuOpen(false)}>News</Link>
+                  </li>
                 </>
               ) : (
                 <>
@@ -74,6 +77,9 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link to="/browse" onClick={() => setIsMenuOpen(false)}>Browse</Link>
+                  </li>
+                  <li>
+                    <Link to="/news" onClick={() => setIsMenuOpen(false)}>News</Link>
                   </li>
                 </>
               )}
@@ -181,6 +187,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="/admin/jobs" onClick={() => setIsMenuOpen(false)}>Jobs</Link>
+                </li>
+                <li>
+                  <Link to="/news" onClick={() => setIsMenuOpen(false)}>News</Link>
                 </li>
               </>
             ) : (
