@@ -39,8 +39,7 @@ const NewsPage = () => {
     <div className="relative min-h-screen bg-black flex flex-col">
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-yellow-500/20 via-black to-black z-0"></div>
-      <div className="absolute inset-0 bg-[url('/assets/stars.png')] bg-cover opacity-50 z-0"></div>
-
+      
       {/* Star Container (Fixed to cover full viewport) */}
       <div id="stars-container" className="fixed inset-0 z-0 w-full h-full"></div>
 
