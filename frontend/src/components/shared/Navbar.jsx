@@ -203,6 +203,9 @@ const Navbar = () => {
                 <li>
                   <Link to="/browse" onClick={() => setIsMenuOpen(false)}>Browse</Link>
                 </li>
+                <li>
+                  <Link to="/news" onClick={() => setIsMenuOpen(false)}>News</Link>
+                </li>
               </>
             )}
 
